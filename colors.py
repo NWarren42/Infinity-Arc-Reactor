@@ -1,0 +1,18 @@
+OFF = (0, 0, 0)
+
+
+#LIGHT_BLUE = (110, 165, 250)
+LIGHT_BLUE = (10, 20, 30)
+DARK_BLUE = (0, 15, 145)
+
+DARK_RED = (145, 0, 0)
+
+PURPLE = (20, 0, 35)
+
+LIGHT_GREEN = (0, 25, 0)
+#DARK_GREEN = (0, 90, 0)
+
+LIGHT_YELLOW = (30, 30, 0)
+
+# LIGHT_ORANGE = (255, 160, 0)
+# DARK_ORANGE = (200, 105, 0)
