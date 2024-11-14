@@ -1,0 +1,29 @@
+''' Setting up Micropython on a ESP32 -- WemosS2 version'''
+
+Grab the binary from https://github.com/wemos/micropython/releases
+
+Put the board in DFU mode by holding the 0 and pressing the RST button 
+Check COM port using device manager
+
+run: "esptool --port COMXX erase_flash" to clear whatever garbage is currently on it
+run: "esptool --port COMXX --baud 1000000 write_flash -z 0x1000 BINARYPATH" to flash the binary to the controller
+
+press RST (without pressing 0) to pull the system out of DFU mode and into normal operation
+** note that the COM port will probably change when switching out of DFU mode **
+
+To connect to the REPL now on the board connect using serial (up to baud rate of 1000000 tested) to the COM port using whatever tool.
+
+Connecting over SimplySerial:
+ss -com:XX -baud:1000000 
+
+
+Connecting over mpremote:
+https://docs.micropython.org/en/latest/reference/mpremote.html
+
+pip install mpremote
+
+commands: 
+"mpremote" -- connects to first available serial device and opens repl by default. Equivalent to "mpremote -repl"
+"mpremote connect port:COMXX" -- connects to serial device on specified com port. Shorthand is "mpremote cXX"
+"mpremote run <file.py>" -- Runs a script from local filesystem. Prints any output to outside terminal.
+"mpremote fs" -- FILE SYSTEM MANAGEMENT!!
